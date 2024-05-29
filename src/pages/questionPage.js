@@ -23,11 +23,50 @@ export const initQuestionPage = () => {
     const answerElement = createAnswerElement(key, answerText);
     answersListElement.appendChild(answerElement);
   }
+  /// gonna try
+  const skipButton = document.createElement('button');
+  skipButton.textContent = 'Skip';
+  skipButton.id = SKIP_BUTTON_ID;
+  skipButton.addEventListener('click', skipButtonClickHandler);
+  userInterface.appendChild(skipButton); ///
 
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
 };
+
+
+///
+const answerClickHandler = (selectedAnswer, correctAnswer) => {
+  const answersListElement = document.getElementById(ANSWERS_LIST_ID);
+  const answerElements = answersListElement.getElementsByTagName('button');
+
+  for (const answerElement of answerElements) {
+    if (answerElement.id === selectedAnswer) {
+      answerElement.style.backgroundColor = selectedAnswer === correctAnswer ? 'green' : 'red';
+    }
+    if (answerElement.id === correctAnswer) {
+      answerElement.style.backgroundColor = 'green';
+    }
+  }
+};
+///
+
+const skipButtonClickHandler = () => {
+  const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
+  const answersListElement = document.getElementById(ANSWERS_LIST_ID);
+  const answerElements = answersListElement.getElementsByTagName('button');
+
+  for (const answerElement of answerElements) {
+    if (answerElement.id === currentQuestion.correctAnswer) {
+      answerElement.style.backgroundColor = 'green';
+    }
+  }
+
+  // Optionally, you can display a message or perform additional actions here
+  console.log('Correct answer revealed.');
+};
+//
 
 const nextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;

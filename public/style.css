@@ -14,10 +14,12 @@
 
 ul {
   list-style: none;
+  align-items: center;
+  flex-direction: column;
 }
 
 ul li{
-  margin: 10px 0;
+  margin: 10px 7px;
   color: black;
   font-size: 1.4em;
   font-weight: 700;
@@ -63,5 +65,13 @@ button {
   padding: 10px 20px;
   font-size: 16px;
   border-radius: 10px;
-  width: 50%;
+  /* width: 50%; */
+  width: 200px;
+  transition: 0.4s;
+  font-family: cursive;
+}
+button:hover{
+  text-decoration: underline #d63147;
+  background-color: #ce94a9;
+  transform: scale(1.1);
 }

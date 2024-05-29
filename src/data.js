@@ -12,7 +12,7 @@
 export const quizData = {
   currentQuestionIndex: 0,
   // the questions in the quiz
-  questions: [ 
+  questions: [
     {
       text: 'How is the Netherland national football team called?',
       answers: {
@@ -30,25 +30,25 @@ export const quizData = {
         a: 'Mount Kenya',
         b: 'Mount Klimanjaro',
         c: 'Mount Everest',
-        d: 'Mount Blanc'
-        
+        d: 'Mount Blanc',
       },
       correct: 'b',
       selected: null,
     },
 
     {
-      text: 'Which country is the largest producer of coffee beans in the world?',
+      text:
+        'Which country is the largest producer of coffee beans in the world?',
       answers: {
-         a: 'Colombia',
-         b: 'Kenya',
-         c: 'Brazil',
-         d: 'Netherland'
+        a: 'Colombia',
+        b: 'Kenya',
+        c: 'Brazil',
+        d: 'Netherland',
       },
       correct: 'c',
       selected: null,
     },
-    {                       
+    {
       text: 'What is the main cause of wind?',
       answers: {
         a: ' Earth rotation',
@@ -71,9 +71,9 @@ export const quizData = {
       correct: 'c',
       selected: null,
     },
-    {                     
+    {
       text: 'What is the highest point in the Netherlands?',
-      answers: {              
+      answers: {
         a: 'Vaalserberg',
         b: 'Utrechtse Heuvelrug',
         c: 'Veluwe',
@@ -94,31 +94,32 @@ export const quizData = {
       correct: 'c',
       selected: null,
     },
-    {      
-      text: "Who is known as the 'King of Pop'?",  
-      answers: {                                     
-        a: "Elvis Presley",
-        b: "Michael Jackson",
-        c: "Prince",
-        d: "Madonna",
+    {
+      text: "Who is known as the 'King of Pop'?",
+      answers: {
+        a: 'Elvis Presley',
+        b: 'Michael Jackson',
+        c: 'Prince',
+        d: 'Madonna',
       },
       correct: 'b',
       selected: null,
     },
 
     {
-      text: "Which classical composer became deaf later in life?",
+      text: 'Which classical composer became deaf later in life?',
       answers: {
-        a: "Wolfgang Amadeus Mozart",
-        b: "Johann Sebastian Bach",
-        c: "Ludwig van Beethoven",
-        d: "Franz Schubert",
+        a: 'Wolfgang Amadeus Mozart',
+        b: 'Johann Sebastian Bach',
+        c: 'Ludwig van Beethoven',
+        d: 'Franz Schubert',
       },
       correct: 'c',
       selected: null,
     },
     {
-      text: "What is the term used to describe the quality of a musical tone that distinguishes it from others of the same pitch and volume?",
+      text:
+        'What is the term used to describe the quality of a musical tone that distinguishes it from others of the same pitch and volume?',
       answers: {
         a: 'Timbre',
         b: 'Rhythm',
@@ -128,6 +129,33 @@ export const quizData = {
       correct: 'a',
       selected: null,
     },
-
   ],
+};
+
+/**
+ * Save the quiz data to localStorage
+ */
+export const saveQuizData = () => {
+  localStorage.setItem('quizData', JSON.stringify(quizData));
+};
+
+/**
+ * Load the quiz data from localStorage
+ */
+export const loadQuizData = () => {
+  const savedQuizData = localStorage.getItem('quizData');
+  if (savedQuizData) {
+    Object.assign(quizData, JSON.parse(savedQuizData));
+  }
+};
+
+/**
+ * Reset the quiz data to the initial state
+ */
+export const resetQuizData = () => {
+  quizData.currentQuestionIndex = 0;
+  quizData.questions.forEach((question) => {
+    question.selected = null;
+  });
+  saveQuizData();
 };

@@ -37,8 +37,7 @@ export const quizData = {
     },
 
     {
-      text:
-        'Which country is the largest producer of coffee beans in the world?',
+      text: 'Which country is the largest producer of coffee beans in the world?',
       answers: {
         a: 'Colombia',
         b: 'Kenya',
@@ -118,8 +117,7 @@ export const quizData = {
       selected: null,
     },
     {
-      text:
-        'What is the term used to describe the quality of a musical tone that distinguishes it from others of the same pitch and volume?',
+      text: 'What is the term used to describe the quality of a musical tone that distinguishes it from others of the same pitch and volume?',
       answers: {
         a: 'Timbre',
         b: 'Rhythm',
@@ -152,8 +150,10 @@ export const loadQuizData = () => {
 /**
  * Reset the quiz data to the initial state
  */
-export const resetQuizData = () => {
+export const resetQuizData = (userName) => {
   quizData.currentQuestionIndex = 0;
+  quizData.score = 0;
+  quizData.userName = userName;
   quizData.questions.forEach((question) => {
     question.selected = null;
   });

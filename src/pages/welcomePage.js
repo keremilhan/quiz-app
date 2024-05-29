@@ -5,7 +5,12 @@ import {
 } from '../constants.js';
 import { createWelcomeElement } from '../views/welcomeView.js';
 import { initQuestionPage } from './questionPage.js';
-import { quizData, resetQuizData } from '../data.js';
+import {
+  quizData,
+  resetQuizData,
+  saveQuizData,
+  loadQuizData,
+} from '../data.js';
 
 export const initWelcomePage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
@@ -51,8 +56,14 @@ export const initWelcomePage = () => {
       nameInput.style.display = 'none'; // Hide the input field
       namePrompt.style.display = 'none'; // Hide the <p> tag
 
-      // Reset quiz data for new user
-      resetQuizData();
+      // Load quiz data if the username matches, else reset quiz data
+      if (quizData.userName === playerName) {
+        // Continue existing quiz
+        loadQuizData();
+      } else {
+        // Start new quiz
+        resetQuizData(playerName);
+      }
     }
   });
 

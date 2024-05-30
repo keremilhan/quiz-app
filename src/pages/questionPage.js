@@ -19,16 +19,19 @@ export const initQuestionPage = () => {
 
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
+
+  const skipButton = document.createElement('button');
+  skipButton.textContent = 'Skip';
+  skipButton.classList.add("skipButton")
+  skipButton.addEventListener('click', skipButtonClickHandler);
+  userInterface.appendChild(skipButton); 
+
+
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
     const answerElement = createAnswerElement(key, answerText);
     answersListElement.appendChild(answerElement);
   }
-  /// gonna try
-  const skipButton = document.createElement('button');
-  skipButton.textContent = 'Skip';
-  skipButton.id = SKIP_BUTTON_ID;
-  skipButton.addEventListener('click', skipButtonClickHandler);
-  userInterface.appendChild(skipButton); ///
+  
 
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)

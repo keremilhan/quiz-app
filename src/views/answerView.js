@@ -9,3 +9,15 @@ export const createAnswerElement = (key, answerText) => {
   `;
   return element;
 };
+
+export const handleAnswerClick = (selectedKey) => {
+  const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
+  const correctAnswer = currentQuestion.correct;
+  if (selectedKey === correctAnswer) {
+    quizData.score += 1;
+    console.log('Correct!');
+  } else {
+    console.log('incorrect!');
+  }
+  nextQuestion();
+};

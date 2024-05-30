@@ -75,3 +75,14 @@ button:hover{
   background-color: #ce94a9;
   transform: scale(1.1);
 }
+.correct {
+  background: green;
+}
+
+.incorrect{
+background: red;
+}
+.skipButton {
+ color: rgb(255, 0, 187);
+ margin: 7px;
+}

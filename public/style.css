@@ -9,7 +9,6 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
-  
 }
 .centered {
   display: flex;
@@ -38,7 +37,7 @@ ul {
   flex-direction: column;
 }
 
-ul li{
+ul li {
   margin: 10px 0;
   color: black;
   font-size: 1.4em;
@@ -59,12 +58,11 @@ ul li{
 ul li:hover {
   text-decoration: underline #d63147;
   background-color: transparent;
-  background-color: rgb(142,17,73);
+  background-color: rgb(142, 17, 73);
   color: #b1d6dd;
   text-decoration: none;
   transform: scale(1.1);
 }
-
 
 .score-container {
   position: fixed;
@@ -81,25 +79,26 @@ ul li:hover {
   font-weight: 800;
   color: #333;
   text-decoration: double underline #d6d031;
- 
 }
- #player-name-input,
-  #confirm-button {
+#player-name-input,
+#confirm-button,
+#continue-button {
   margin-bottom: 10px;
   padding: 15px;
   font-size: 16px;
   border-radius: 10px;
-  border: none; 
-} 
+  border: none;
+}
+
 #player-name-input {
-  border: 3px solid rgb(142,17,73);
+  border: 3px solid rgb(142, 17, 73);
   padding: 8px 10px;
   font-size: 16px;
   text-align: left;
 }
 
 #player-name-input:focus {
-  border: 3px solid rgb(142,17,73);
+  border: 3px solid rgb(142, 17, 73);
   outline: none;
   text-align: left;
 }
@@ -111,9 +110,9 @@ button {
   border-radius: 10px;
   width: 50%;
   border: none;
-
 }
-#confirm-button:disabled {
+#confirm-button:disabled,
+#continue-button:disabled {
   background-color: rgb(194, 193, 193);
   cursor: pointer;
   padding: 10px 20px;
@@ -122,8 +121,9 @@ button {
   width: 50%;
   border: none;
 }
-#confirm-button.button-enabled{
-  background-color: rgb(142,17,73);
+#confirm-button.button-enabled,
+#continue-button:enabled {
+  background-color: rgb(142, 17, 73);
   padding: 10px 20px;
   font-size: 16px;
   border-radius: 10px;
@@ -134,23 +134,23 @@ button {
 #name-prompt {
   padding: 20px;
   font-size: 25px;
-  color: rgb(180,236,254);
+  color: rgb(180, 236, 254);
 }
 
 .welcome-effect {
   transition: color 1s ease;
-  color:  darkblue;
+  color: darkblue;
 }
-#welcome-message{
+#welcome-message {
   font-size: 50px;
   color: rgb(186, 231, 253);
 }
-.start-quiz-button{
+.start-quiz-button {
   background-color: rgb(207, 79, 137);
 }
 
 .green-text {
-  color: rgb(221, 113, 162) !important; 
+  color: rgb(221, 113, 162) !important;
 }
 
 /* response */
@@ -173,12 +173,12 @@ button {
     font-size: 24px;
   }
   #welcome-message {
-    font-size: 40px; 
+    font-size: 40px;
   }
   .start-quiz-button {
-    font-size: 16px; 
+    font-size: 16px;
     padding: 10px 20px;
-    width: 70%; 
+    width: 70%;
   }
 }
 
@@ -210,10 +210,12 @@ button {
     width: 100%;
   }
   #player-name-input,
-  #confirm-button {
+  #confirm-button,
+  #continue-button {
     padding: 12px;
     font-size: 14px;
   }
+
   #name-prompt {
     padding: 20px;
   }
@@ -227,7 +229,9 @@ button {
   flex-direction: column;
 }
 
-#player-name-input, #confirm-button {
+#player-name-input,
+#confirm-button,
+#continue-button {
   margin-bottom: 10px;
   padding: 15px;
   font-size: 16px;
@@ -244,16 +248,15 @@ button {
   width: 50%;
 }
 
-.skipped-correct { 
+.skipped-correct {
   background-color: gray;
 }
- #skip-question-button{
+#skip-question-button {
   margin: 20px;
-border-radius: 20px;
+  border-radius: 20px;
 }
-#next-question-button{
-
-border-radius: 20px;
+#next-question-button {
+  border-radius: 20px;
 }
 .ending-container {
   text-align: center;
@@ -265,7 +268,7 @@ border-radius: 20px;
   padding: 20px;
   font-size: 1.5em;
   background-color: black;
-  color:yellow;
+  color: yellow;
   margin-bottom: 30px;
 }
 
@@ -296,7 +299,6 @@ border-radius: 20px;
   transform: translateX(-50%);
   display: none; /* Initially hidden */
   display: block;
-  
 }
 .show-unhappy-cat {
   width: 200px; /* Adjust the size as needed */
@@ -307,5 +309,4 @@ border-radius: 20px;
   transform: translateX(-50%);
   display: none; /* Initially hidden */
   display: block;
-  
 }

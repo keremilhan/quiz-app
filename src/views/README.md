@@ -7,9 +7,9 @@ Pages will use view functions to render program state and update the UI.
 VIEW functions will _never_ ...
 
 - read from the DOM
-  - they will create _new_ DOM elements
+    - they will create _new_ DOM elements
 - write to the DOM
-  - they return a DOM element that the handler will append
+    - they return a DOM element that the handler will append
 - use events
 - use prompt/alert/confirm
 - use data that is not passed as a parameter
